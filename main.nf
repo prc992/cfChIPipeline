@@ -49,7 +49,7 @@ workflow {
 
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
-    //chAlignFiles = align(chTrimFiles,chSampleInfo)
+    chAlignFiles = align(chTrimFiles,chSampleInfo)
     /*chSortedFiles = sort_bam(chAlignFiles,chSampleInfo,chDirAnalysis)
     lib_complex(chSortedFiles,chSampleInfo,chDirAnalysis)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo,chDirAnalysis)
