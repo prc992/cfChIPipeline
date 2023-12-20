@@ -1,6 +1,6 @@
 process align {
   queue = "$params.queue"
-  label 'process_medium'
+  label 'process_low'
 
   //memory '16 GB'
   
