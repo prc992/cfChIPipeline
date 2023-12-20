@@ -1,5 +1,6 @@
 process align {
   queue = "$params.queue"
+  label 'process_medium'
   //memory '16 GB'
   
   //Docker Image
