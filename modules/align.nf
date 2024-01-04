@@ -7,7 +7,7 @@ process align {
   //Docker Image
   container = 'quay.io/biocontainers/mulled-v2-fe8faa35dbf6dc65a0f7f5d4ea12e31a79f73e40:8110a70be2bfe7f75a2ea7f2a89cda4cc7732095-0'
 
-  tag "$sampleId" 
+  tag "$sampleId - v3" 
   publishDir "$path_sample_align", mode : 'copy'
   
   input:
@@ -25,6 +25,6 @@ process align {
   
   script:
   """
-  bwa mem -v 0 $file_fa $file1 $file2 | samtools view -Sb -u > $strBam
+  bwa mem -v 0 hg19/hg19.fa $file1 $file2 | samtools view -Sb -u > $strBam
   """
 }
