@@ -13,7 +13,6 @@ process align {
   input:
   tuple path(file1),path(file2)
   tuple val(sampleId), val(path),path(_), path(_)
-  path (files_ref)
   
   output:
   path("*.bam")
@@ -23,9 +22,8 @@ process align {
   path_sample_align = path + "/align/" + sampleId
 
   
-  
   script:
   """
-  bwa mem -v 0 hg19.fa $file1 $file2 | samtools view -Sb -u > $strBam
+  bwa mem -v 0 $params.align_ref $file1 $file2 | samtools view -Sb -u > $strBam
   """
 }
