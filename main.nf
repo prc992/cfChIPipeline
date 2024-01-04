@@ -42,7 +42,7 @@ workflow {
     //Assets
     chGTF_ref = Channel.fromPath("$params.gtf_ref")
     chPileUpBED = Channel.fromPath("$params.genes_pileup_report")
-    chFilesRef = Channel.fromPath("$params.files_ref_genome")
+    //chFilesRef = Channel.fromPath("$params.files_ref_genome")
 
     //chSampleDir = mk_dir(chSampleInfo)
     //chSampleDirPileUps = mk_dir_pile_ups_comp(chSampleInfo)
@@ -50,7 +50,7 @@ workflow {
 
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
-    chAlignFiles = align(chTrimFiles,chSampleInfo,chFilesRef)
+    chAlignFiles = align(chTrimFiles,chSampleInfo)
     /*chSortedFiles = sort_bam(chAlignFiles,chSampleInfo,chDirAnalysis)
     lib_complex(chSortedFiles,chSampleInfo,chDirAnalysis)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo,chDirAnalysis)
