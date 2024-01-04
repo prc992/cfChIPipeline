@@ -48,7 +48,7 @@ workflow {
     //chSampleDirPileUps = mk_dir_pile_ups_comp(chSampleInfo)
     //chDirAnalysis = mk_dir_samples(chSampleInfo,chSampleDir)
 
-    ch_fasta = Channel.value(file("$params.align_ref"))
+    ch_fasta = Channel.fromPath("$params.align_ref",type: 'dir' )
 
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
