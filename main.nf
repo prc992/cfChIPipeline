@@ -48,9 +48,11 @@ workflow {
     //chSampleDirPileUps = mk_dir_pile_ups_comp(chSampleInfo)
     //chDirAnalysis = mk_dir_samples(chSampleInfo,chSampleDir)
 
+    ch_fasta = Channel.value(file("$params.align_ref"))
+
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
-    chAlignFiles = align(chTrimFiles,chSampleInfo)
+    chAlignFiles = align(chTrimFiles,chSampleInfo,ch_fasta)
     /*chSortedFiles = sort_bam(chAlignFiles,chSampleInfo,chDirAnalysis)
     lib_complex(chSortedFiles,chSampleInfo,chDirAnalysis)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo,chDirAnalysis)
