@@ -9,14 +9,14 @@ process lib_complex {
 
   input:
   path sampleBam
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (path_sample_align),val (_),val(_),val (_), val(_), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   output:
   path("*.csv")
 
   exec:
   String strBam = sampleId + '_lib_complexity.csv'
+  path_sample_align = path + "/align/" + sampleId
 
   script:
   """
