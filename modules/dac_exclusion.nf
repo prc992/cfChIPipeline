@@ -4,12 +4,13 @@ process dac_exclusion {
   //Docker Image
   container ='quay.io/biocontainers/bedtools:2.30.0--hc088bd4_0'
 
-  tag "$sampleId - 2" 
+  tag "$sampleId - 3" 
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
   tuple path(sampleBam),path(_)
   tuple val(sampleId), val(path),path(_), path(_)
+  path (sampleDAC)
 
   exec:
   path_sample_align = path + "/align/" + sampleId
@@ -20,6 +21,6 @@ process dac_exclusion {
 
   script:
   """
-  bedtools intersect -v -abam $sampleBam -b $params.DAC_Exclusion > $strBam
+  bedtools intersect -v -abam $sampleBam -b $sampleDAC > $strBam
 	"""
 }
