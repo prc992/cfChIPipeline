@@ -4,15 +4,15 @@ process dedup {
   //Docker Image
   container = 'quay.io/biocontainers/picard:2.27.4--hdfd78af_0'
 
-  tag "$sampleId" 
+  tag "$sampleId - 1" 
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
   path sampleBam
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (path_sample_align),val (_),val(_),val (_),val(_), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
+  path_sample_align = path + "/align/" + sampleId
   String strBam = sampleId + '.dedup.unique.sorted.bam'
   String strTxt = sampleId + '-MarkDuplicates.metrics.txt'
 
