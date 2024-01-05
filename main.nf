@@ -42,6 +42,7 @@ workflow {
     //Assets
     chGTF_ref = Channel.fromPath("$params.gtf_ref")
     chPileUpBED = Channel.fromPath("$params.genes_pileup_report")
+    chDACFile = Channel.fromPath("$params.DAC_Exclusion")
     //chFilesRef = Channel.fromPath("$params.files_ref_genome")
 
     //chSampleDir = mk_dir(chSampleInfo)
@@ -57,7 +58,7 @@ workflow {
     lib_complex(chSortedFiles,chSampleInfo)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo)
     chDedupFiles = dedup(chUniqueFiles,chSampleInfo)
-    chDACFiles = dac_exclusion(chDedupFiles,chSampleInfo)
+    chDACFiles = dac_exclusion(chDedupFiles,chSampleInfo,chDACFile)
 
     /*chIndexFiles = index_sam(chDedupFiles,chSampleInfo,chDirAnalysis)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo,chDirAnalysis)
