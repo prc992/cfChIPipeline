@@ -16,6 +16,7 @@ process peak_bed_graph{
   tuple path ('*.*'),path ('*.bdg')
 
   exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   nameNarrowPeaksFile = sampleId + '_peaks.narrowPeak'
   nameNarrowPeaksFileBed = sampleId + '_peaks.narrowPeak.bed'
   
