@@ -13,8 +13,8 @@ process dedup {
 
   exec:
   path_sample_align = path + "/align/" + sampleId
-  String strBam = sampleId + '.dedup.unique.sorted.bam'
-  String strTxt = sampleId + '-MarkDuplicates.metrics.txt'
+  strBam = sampleId + '.dedup.unique.sorted.bam'
+  strTxt = sampleId + '-MarkDuplicates.metrics.txt'
 
   output:
   tuple path("*.bam"),path("*.txt")
