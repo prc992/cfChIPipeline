@@ -9,8 +9,10 @@ process index_sam {
   
   input:
   tuple path (sampleBam), path(_)
-  tuple val (sampleId), val(_),path(_), path(_)
-  tuple val (path_sample_align),val (_),val(_),val (_),val(_), val(_),val(_)
+  tuple val (sampleId), val(path), path(_), path(_)
+
+  exec:
+  path_sample_align = path + "/align/" + sampleId
 
   output:
   path ('*.bai')
