@@ -4,7 +4,7 @@ process lib_complex {
   //Docker Image
   container = "quay.io/biocontainers/picard:2.27.4--hdfd78af_0"
 
-  tag "$sampleId"
+  tag "$sampleId-1"
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
