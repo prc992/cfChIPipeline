@@ -54,8 +54,8 @@ workflow {
     chTrimFiles = trim(chSampleInfo)
     chAlignFiles = align(chTrimFiles,chSampleInfo,ch_fasta)
     chSortedFiles = sort_bam(chAlignFiles,chSampleInfo)
-    /*lib_complex(chSortedFiles,chSampleInfo,chDirAnalysis)
-    chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo,chDirAnalysis)
+    lib_complex(chSortedFiles,chSampleInfo)
+    /*chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo,chDirAnalysis)
     chDedupFiles = dedup(chUniqueFiles,chSampleInfo,chDirAnalysis)
     chDACFiles = dac_exclusion(chDedupFiles,chSampleInfo,chDirAnalysis)
 
