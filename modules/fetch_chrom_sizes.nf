@@ -14,10 +14,11 @@ process fetch_chrom_sizes{
   path_sample_peaks = path + "/peaks/" + sampleId
   //Here we extract the reference genome from the param align_ref
   //using string manipulation
-  int inicio = params.align_ref.lastIndexOf('/');
-  int fim = params.align_ref.indexOf('.fa'); 
-  String refGenome = params.align_ref.substring(inicio+1,fim);
-  String refGenomeFile = refGenome + '.chrom.sizes'
+  //int inicio = params.align_ref.lastIndexOf('/');
+  //int fim = params.align_ref.indexOf('.fa'); 
+  //String refGenome = params.align_ref.substring(inicio+1,fim);
+  refGenome = params.genome_ref
+  refGenomeFile = refGenome + '.chrom.sizes'
 
   output:
   path ('*.sizes')
