@@ -1,5 +1,6 @@
 process unique_frags {
   queue = "$params.queue"
+  container ='ubuntu:noble-20231221'
 
   tag "#$sampleId" 
   publishDir "$path_sample_peaks", mode : 'copy'
