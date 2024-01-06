@@ -10,7 +10,9 @@ process lenght_fragment_dist_step1{
   input:
   tuple path (sampleBam), path(_)
   tuple val(sampleId), val(path),path(_), path(_)
-  tuple val (_),val (_),val(path_sample_frag),val (_),val(_), val(_),val(_)
+
+  exec:
+  path_sample_frag = path + "/frag/" + sampleId
 
   output:
   path ('*.txt')
@@ -41,10 +43,10 @@ process lenght_fragment_dist_step2{
   path (chRfrag_plotFragDist)
   path(fragLeng)
   tuple val(sampleId), val(path),path(_), path(_)
-  tuple val (_),val (_),val(path_sample_frag),val (_),val(_), val(_),val(_)
 
   exec:
   String strPNG = sampleId + '_fragDist.png' 
+  path_sample_frag = path + "/frag/" + sampleId
 
   script:
   """
