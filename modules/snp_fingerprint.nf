@@ -13,7 +13,7 @@ process snp_fingerprint {
 
   exec:
   path_sample_snp_fingerprint = path + "/snp_fingerprint/" + sampleId
-  String strVCFgz = sampleId + '.vcf.gz'
+  strVCFgz = sampleId + '.vcf.gz'
   
   output:
   path ("*.vcf.gz")
