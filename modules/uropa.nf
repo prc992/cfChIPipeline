@@ -1,15 +1,16 @@
 process json_uropa{
   queue = "$params.queue"
-  tag "$sampleId"
+  tag "$sampleId - 2"
+  publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   output:
   path ('cfchip.json')
 
   exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   bed_file = sampleId + '_peaks.narrowPeak.bed'
 
   script:
@@ -37,8 +38,10 @@ process uropa {
   tuple path(narrowpeak),val(_)
   path (json_file)
   path (gtf_file)
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
+
+  exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   
   output:
   path ('*finalhits.bed')
