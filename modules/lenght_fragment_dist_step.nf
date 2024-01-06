@@ -18,7 +18,7 @@ process lenght_fragment_dist_step1{
   path ('*.txt')
 
   exec:
-  String strtxt = sampleId + '_fragment_lengths.txt'
+  strtxt = sampleId + '_fragment_lengths.txt'
 
   script:
   """
@@ -45,7 +45,7 @@ process lenght_fragment_dist_step2{
   tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
-  String strPNG = sampleId + '_fragDist.png' 
+  strPNG = sampleId + '_fragDist.png' 
   path_sample_frag = path + "/frag/" + sampleId
 
   script:
