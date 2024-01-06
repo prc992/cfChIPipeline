@@ -6,13 +6,13 @@ process unique_frags {
 
   input:
   path (sampleBed)
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   output:
   path ('*.csv')
 
   exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   String strCSV = sampleId + '_unique_frags.csv'
   
   script:
