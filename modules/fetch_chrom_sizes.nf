@@ -8,10 +8,10 @@ process fetch_chrom_sizes{
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   //Here we extract the reference genome from the param align_ref
   //using string manipulation
   int inicio = params.align_ref.lastIndexOf('/');
