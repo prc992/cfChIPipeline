@@ -36,7 +36,7 @@ workflow {
     chRfrag_plotFragDist = Channel.fromPath("$params.pathRfrag_plotFragDist")
     chRComparison = Channel.fromPath("$params.pathRComparison")
     chRPileups= Channel.fromPath("$params.pathRPileups")
-    chJson_file = Channel.fromPath("$params.pathJson_file")
+    //chJson_file = Channel.fromPath("$params.pathJson_file")
 
 
     //Assets
