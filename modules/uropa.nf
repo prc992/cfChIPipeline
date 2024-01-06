@@ -31,7 +31,7 @@ process uropa {
   //Docker Image
   container = "quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0"
 
-  tag "$sampleId" 
+  tag "$sampleId - 2" 
   publishDir "$path_sample_peaks", mode : 'copy'
   
   input:
