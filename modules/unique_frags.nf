@@ -13,7 +13,7 @@ process unique_frags {
 
   exec:
   path_sample_peaks = path + "/peaks/" + sampleId
-  String strCSV = sampleId + '_unique_frags.csv'
+  strCSV = sampleId + '_unique_frags.csv'
   
   script:
   """
