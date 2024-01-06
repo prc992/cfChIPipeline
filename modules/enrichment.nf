@@ -10,10 +10,10 @@ process enrichment {
   input:
   path (chEnrichmentScript)
   tuple path (sampleBam), val(_)
-  tuple val(sampleId), val(_), val(_), val(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
+  path_sample_peaks = path + "/peaks/" + sampleId
   strCSV = sampleId + '_total_enrichment.csv'
 
   output:
