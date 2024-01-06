@@ -66,10 +66,10 @@ workflow {
     chJson_file = json_uropa(chSampleInfo)
     uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
 
-    /*chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo,chDirAnalysis)
+    chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo,chDirAnalysis)
     unique_frags(chBedFiles,chSampleInfo,chDirAnalysis)
     chChromSizes = fetch_chrom_sizes(chSampleInfo,chDirAnalysis)
-    snp_fingerprint(chDedupFiles,chSampleInfo,chDirAnalysis)
+    /*snp_fingerprint(chDedupFiles,chSampleInfo,chDirAnalysis)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo,chDirAnalysis)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo,chDirAnalysis)
