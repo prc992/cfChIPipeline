@@ -9,11 +9,11 @@ process bam_to_bed {
   
   input:
   tuple path (sampleBam), path(_)
-  tuple val(sampleId), val(_),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
   String strBed = sampleId + '.bed'
+  path_sample_peaks = path + "/peaks/" + sampleId
 
   output:
   path ('*.bed')
