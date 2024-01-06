@@ -63,10 +63,10 @@ workflow {
     chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo)
 
-    /*chJson_file = json_uropa(chSampleInfo,chDirAnalysis)
-    uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo,chDirAnalysis)
+    chJson_file = json_uropa(chSampleInfo)
+    uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
 
-    chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo,chDirAnalysis)
+    /*chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo,chDirAnalysis)
     unique_frags(chBedFiles,chSampleInfo,chDirAnalysis)
     chChromSizes = fetch_chrom_sizes(chSampleInfo,chDirAnalysis)
     snp_fingerprint(chDedupFiles,chSampleInfo,chDirAnalysis)
