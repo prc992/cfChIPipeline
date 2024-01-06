@@ -9,10 +9,10 @@ process snp_fingerprint {
 
   input:
   tuple path (sampleBam), val (_)
-  tuple val(sampleId), val(_),val(_), val(_)
-  tuple val (_),val (_),val(_),val (_),val(_),val(path_sample_snp_fingerprint),val(_)
+  tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
+  path_sample_snp_fingerprint = path + "/snp_fingerprint/" + sampleId
   String strVCFgz = sampleId + '.vcf.gz'
   
   output:
