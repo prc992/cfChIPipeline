@@ -69,13 +69,13 @@ workflow {
     chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo)
     unique_frags(chBedFiles,chSampleInfo)
     chChromSizes = fetch_chrom_sizes(chSampleInfo)
-    /*snp_fingerprint(chDedupFiles,chSampleInfo,chDirAnalysis)
+    snp_fingerprint(chDedupFiles,chSampleInfo)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo,chDirAnalysis)
-    chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo,chDirAnalysis)
+    chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
     lenght_fragment_dist_step2(chRfrag_plotFragDist,chFragDis,chSampleInfo,chDirAnalysis)
 
-    chBWFiles = bedGraphToBigWig(chChromSizes,chPeakFiles,chSampleInfo,chDirAnalysis)
+    /*chBWFiles = bedGraphToBigWig(chChromSizes,chPeakFiles,chSampleInfo,chDirAnalysis)
     pileups_report(chSampleInfo,chDirAnalysis,chChromSizes,chBWFiles,chPileUpBED,chRPileups)*/
 
     //Collect all files output and the pass to me program that will merge then
