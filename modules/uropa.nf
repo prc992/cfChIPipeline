@@ -3,7 +3,7 @@ process json_uropa{
   tag "$sampleId - 2"
   publishDir "$path_sample_peaks", mode : 'copy'
 
-  container = "quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0"
+  container = "ubuntu:noble-20231221"
 
   input:
   tuple val(sampleId), val(path),path(_), path(_)
