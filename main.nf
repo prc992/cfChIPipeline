@@ -71,9 +71,9 @@ workflow {
     chChromSizes = fetch_chrom_sizes(chSampleInfo)
     snp_fingerprint(chDedupFiles,chSampleInfo)
 
-    enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo,chDirAnalysis)
+    enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
-    lenght_fragment_dist_step2(chRfrag_plotFragDist,chFragDis,chSampleInfo,chDirAnalysis)
+    lenght_fragment_dist_step2(chRfrag_plotFragDist,chFragDis,chSampleInfo)
 
     /*chBWFiles = bedGraphToBigWig(chChromSizes,chPeakFiles,chSampleInfo,chDirAnalysis)
     pileups_report(chSampleInfo,chDirAnalysis,chChromSizes,chBWFiles,chPileUpBED,chRPileups)*/
