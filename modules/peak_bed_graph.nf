@@ -10,7 +10,6 @@ process peak_bed_graph{
   input:
   tuple path (sampleBam), path(_)
   tuple val(sampleId), val(path),path(_), path(_)
-  tuple val (_),val (_),val(_),val (_),val(path_sample_peaks), val(_),val(_)
 
   output:
   tuple path ('*.*'),path ('*.bdg')
