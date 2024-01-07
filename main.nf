@@ -43,6 +43,8 @@ workflow {
     chGTF_ref = Channel.fromPath("$params.gtf_ref")
     chPileUpBED = Channel.fromPath("$params.genes_pileup_report")
     chDACFile = Channel.fromPath("$params.DAC_Exclusion")
+    chSNPS_ref = Channel.fromPath("$params.snps_ref")
+
     //chFilesRef = Channel.fromPath("$params.files_ref_genome")
 
     //chSampleDir = mk_dir(chSampleInfo)
@@ -69,7 +71,7 @@ workflow {
     chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo)
     unique_frags(chBedFiles,chSampleInfo)
     chChromSizes = fetch_chrom_sizes(chSampleInfo)
-    snp_fingerprint(chDedupFiles,chSampleInfo)
+    snp_fingerprint(chDedupFiles,chSNPS_ref,chSampleInfo)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
