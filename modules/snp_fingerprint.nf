@@ -22,7 +22,7 @@ process snp_fingerprint {
 
   script:
   """
-  FASTA=`find -L ./ -name "*.fa"
+  FASTA=`find -L ./ -name "*.fa"`
   samtools index $sampleBam &&
   bcftools mpileup -Ou -R $snps_ref -f \$FASTA $sampleBam | bcftools call -c | bgzip > $strVCFgz
   """
