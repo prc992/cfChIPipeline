@@ -12,6 +12,7 @@ process snp_fingerprint {
   path (snps_ref)
   path (file_fa)
   tuple val(sampleId), val(path),path(_), path(_)
+  path (indexFiles)
 
   exec:
   path_sample_snp_fingerprint = path + "/snp_fingerprint/" + sampleId
@@ -23,7 +24,6 @@ process snp_fingerprint {
   script:
   """
   FASTA=`find -L ./ -name "*.fa"`
-  samtools index $sampleBam &&
   bcftools mpileup -Ou -R $snps_ref -f \$FASTA $sampleBam | bcftools call -c | bgzip > $strVCFgz
   """
 
