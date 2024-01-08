@@ -21,9 +21,6 @@ process pileups_report{
   //Here we extract the reference genome from the param align_ref
   //using string manipulation
   path_sample_pile_ups = path + "/pile_ups/" + sampleId
-  int inicio = params.align_ref.lastIndexOf('/')
-  int fim = params.align_ref.indexOf('.fa')
-  String refGenome = params.align_ref.substring(inicio+1,fim)
 
   output:
   path ('*.pdf')
