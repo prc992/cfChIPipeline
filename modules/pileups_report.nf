@@ -10,7 +10,7 @@ process pileups_report{
   publishDir "$path_sample_pile_ups", mode : 'copy'
 
   input:
-  tuple val(sampleId), val(path),path(_), path(_)
+  tuple val(sampleId), val(path),path(read1), path(read2)
   path (file_fa)
   path (chChromSizes)
   tuple path (_),path (treat_pileup_bw)
