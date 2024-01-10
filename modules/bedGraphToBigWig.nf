@@ -21,7 +21,7 @@ process bedGraphToBigWig {
   fileNameOutput = sampleId + "_treat_pileup.bdg.bw"
 
   output:
-  tuple path (_),path ("$fileNameOutput")
+  tuple path ("*.bw"),path ("*.bw")
 
 
   script:
