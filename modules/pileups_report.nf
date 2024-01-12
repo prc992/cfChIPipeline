@@ -21,15 +21,15 @@ process pileups_report{
   //using string manipulation
   path_sample_pile_ups = path + "/pile_ups/" + sampleId
 
-  strAlign = '"$params.align_ref"'
-  fim = strAlign.lastIndexOf('/')
-  refGenome = strAlign.substring(fim-4,fim)
+  //strAlign = '"$params.align_ref"'
+  //fim = strAlign.lastIndexOf('/')
+  //refGenome = strAlign.substring(fim-4,fim)
 
   output:
   path ('*.pdf')
 
   script:
   """
-  Rscript $chRPileups $treat_pileup_bw $chBED $chChromSizes $refGenome
+  Rscript $chRPileups $treat_pileup_bw $chBED $chChromSizes $params.genome_ref
   """
 }
