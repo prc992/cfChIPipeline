@@ -18,11 +18,10 @@ process bedGraphToBigWig {
   bdgFile2 = bdgFiles.last()
   bdgFile1_out = bdgFile1 + ".bw"
   bdgFile2_out = bdgFile2 + ".bw"
-  fileNameOutput = sampleId + "_treat_pileup.bdg.bw"
+  //fileNameOutput = sampleId + "_treat_pileup.bdg.bw"
 
   output:
-  tuple path ("*.bw"),path ("*.bw")
-
+  tuple path ("*control_lambda.bdg.bw"),path ("*treat_pileup.bdg.bw")
 
   script:
   """
