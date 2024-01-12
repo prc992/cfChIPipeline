@@ -13,7 +13,7 @@ process pileups_report{
   tuple val(sampleId), val(path),path(read1), path(read2)
   path (file_fa)
   path (chChromSizes)
-  tuple path (_),path (treat_pileup_bw)
+  tuple path (control_pileup_bw),path (treat_pileup_bw)
   path (chBED)
   path (chRPileups)
 
