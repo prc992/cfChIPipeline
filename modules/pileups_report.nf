@@ -22,8 +22,8 @@ process pileups_report{
   path_sample_pile_ups = path + "/pile_ups/" + sampleId
 
   strAlign = '"$params.align_ref"'
-  int fim = strAlign.lastIndexOf('/')
-  String refGenome = strAlign.substring(fim-4,fim)
+  fim = strAlign.lastIndexOf('/')
+  refGenome = strAlign.substring(fim-4,fim)
 
   output:
   path ('*.pdf')
