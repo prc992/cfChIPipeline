@@ -11,7 +11,6 @@ process pileups_report{
 
   input:
   tuple val(sampleId), val(path),path(read1), path(read2)
-  path (file_fa)
   path (chChromSizes)
   tuple path (control_pileup_bw),path (treat_pileup_bw)
   path (chBED)
@@ -22,12 +21,15 @@ process pileups_report{
   //using string manipulation
   path_sample_pile_ups = path + "/pile_ups/" + sampleId
 
+  strAlign = '"$params.align_ref"'
+  int fim = strAlign.lastIndexOf('/')
+  String refGenome = strAlign.substring(fim-4,fim)
+
   output:
   path ('*.pdf')
 
   script:
   """
-  FASTA=`find -L ./ -name "*.fa"`
-  Rscript $chRPileups $treat_pileup_bw $chBED $chChromSizes \$FASTA
+  Rscript $chRPileups $treat_pileup_bw $chBED $chChromSizes $refGenome
   """
 }
