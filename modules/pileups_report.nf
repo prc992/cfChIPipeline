@@ -13,8 +13,8 @@ process pileups_report{
   tuple val(sampleId), val(path),path(read1), path(read2)
   path (chChromSizes)
   tuple path (control_pileup_bw),path (treat_pileup_bw)
-  path (chBED)
-  path (chRPileups)
+  each path (chBED)
+  each path (chRPileups)
 
   exec:
   //Here we extract the reference genome from the param align_ref
