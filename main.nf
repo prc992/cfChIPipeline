@@ -62,7 +62,7 @@ workflow {
     chDedupFiles = dedup(chUniqueFiles,chSampleInfo)
     chDACFiles = dac_exclusion(chDedupFiles,chSampleInfo,chDACFile)
 
-    /*chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
+    chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo)
 
     chJson_file = json_uropa(chSampleInfo)
@@ -78,7 +78,7 @@ workflow {
     lenght_fragment_dist_step2(chRfrag_plotFragDist,chFragDis,chSampleInfo)
 
     chBWFiles = bedGraphToBigWig(chChromSizes,chPeakFiles,chSampleInfo)
-    pileups_report(chSampleInfo,chChromSizes,chBWFiles,chPileUpBED,chRPileups)*/
+    pileups_report(chSampleInfo,chChromSizes,chBWFiles,chPileUpBED,chRPileups)
 
     //Collect all files output and the pass to me program that will merge then
     //chAllFiles = chBWFiles.collectFile()
