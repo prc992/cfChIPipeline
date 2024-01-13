@@ -39,7 +39,7 @@ process uropa {
   input:
   tuple path(narrowpeak),val(_)
   path (json_file)
-  path (gtf_file)
+  each path (gtf_file)
   tuple val(sampleId), val(path),path(_), path(_)
 
   exec:
