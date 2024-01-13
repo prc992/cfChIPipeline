@@ -40,7 +40,7 @@ process lenght_fragment_dist_step2{
   path ('*.png')
 
   input:
-  path (chRfrag_plotFragDist)
+  each path (chRfrag_plotFragDist)
   path(fragLeng)
   tuple val(sampleId), val(path),path(_), path(_)
 
