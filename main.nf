@@ -56,7 +56,7 @@ workflow {
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
     chAlignFiles = align(chTrimFiles,chSampleInfo,ch_fasta)
-    chSortedFiles = sort_bam(chAlignFiles,chSampleInfo)
+    /*chSortedFiles = sort_bam(chAlignFiles,chSampleInfo)
     lib_complex(chSortedFiles,chSampleInfo)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo)
     chDedupFiles = dedup(chUniqueFiles,chSampleInfo)
@@ -78,7 +78,7 @@ workflow {
     lenght_fragment_dist_step2(chRfrag_plotFragDist,chFragDis,chSampleInfo)
 
     chBWFiles = bedGraphToBigWig(chChromSizes,chPeakFiles,chSampleInfo)
-    pileups_report(chSampleInfo,chChromSizes,chBWFiles,chPileUpBED,chRPileups)
+    pileups_report(chSampleInfo,chChromSizes,chBWFiles,chPileUpBED,chRPileups)*/
 
     //Collect all files output and the pass to me program that will merge then
     //chAllFiles = chBWFiles.collectFile()
