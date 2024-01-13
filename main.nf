@@ -56,13 +56,13 @@ workflow {
     fastqc(chSampleInfo)
     chTrimFiles = trim(chSampleInfo)
     chAlignFiles = align(chTrimFiles,chSampleInfo,ch_fasta)
-    /*chSortedFiles = sort_bam(chAlignFiles,chSampleInfo)
+    chSortedFiles = sort_bam(chAlignFiles,chSampleInfo)
     lib_complex(chSortedFiles,chSampleInfo)
     chUniqueFiles = unique_sam(chSortedFiles,chSampleInfo)
     chDedupFiles = dedup(chUniqueFiles,chSampleInfo)
     chDACFiles = dac_exclusion(chDedupFiles,chSampleInfo,chDACFile)
 
-    chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
+    /*chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo)
 
     chJson_file = json_uropa(chSampleInfo)
