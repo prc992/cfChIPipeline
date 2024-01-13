@@ -11,9 +11,9 @@ process align {
   publishDir "$path_sample_align", mode : 'copy'
   
   input:
-  each tuple path(file1),path(file2)
-  each tuple val(sampleId), val(path),path(_), path(_)
-  path (file_fa)
+  tuple path(file1),path(file2)
+  tuple val(sampleId), val(path),path(_), path(_)
+  each path (file_fa)
   
   output:
   path("*.bam")
