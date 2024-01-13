@@ -9,8 +9,8 @@ process snp_fingerprint {
 
   input:
   tuple path (sampleBam), val (_)
-  path (snps_ref)
-  path (file_fa)
+  each path (snps_ref)
+  each path (file_fa)
   tuple val(sampleId), val(path),path(_), path(_)
   path (indexFiles)
 
