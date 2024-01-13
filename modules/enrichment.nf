@@ -8,7 +8,7 @@ process enrichment {
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
-  path (chEnrichmentScript)
+  each path (chEnrichmentScript)
   tuple path (sampleBam), val(_)
   tuple val(sampleId), val(path),path(_), path(_)
 
