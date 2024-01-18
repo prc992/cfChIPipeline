@@ -1,5 +1,5 @@
 process unique_frags {
-  queue = "$params.queue"
+  label 'process_low'
   container ='ubuntu:noble-20231221'
 
   tag "#$sampleId" 
