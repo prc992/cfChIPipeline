@@ -1,5 +1,5 @@
 process fetch_chrom_sizes{
-  queue = "$params.queue"
+  label 'process_low'
   
   //Docker Image
   container = 'quay.io/biocontainers/ucsc-fetchchromsizes:377--ha8a8165_3'
