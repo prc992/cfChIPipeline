@@ -1,5 +1,5 @@
 process snp_fingerprint {
-  queue = "$params.queue"
+  label 'process_medium'
   
   //Docker Image
   container = 'quay.io/mcrotti1/bcftools'
