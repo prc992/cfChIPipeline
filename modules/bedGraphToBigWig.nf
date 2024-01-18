@@ -1,5 +1,5 @@
 process bedGraphToBigWig {
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container = "quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h446ed27_1"
