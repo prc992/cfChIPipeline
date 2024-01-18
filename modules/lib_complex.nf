@@ -1,10 +1,10 @@
 process lib_complex {
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container = "quay.io/biocontainers/picard:2.27.4--hdfd78af_0"
 
-  tag "$sampleId-1"
+  tag "$sampleId"
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
