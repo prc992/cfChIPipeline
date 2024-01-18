@@ -1,13 +1,10 @@
 process align {
-  queue = "$params.queue"
-  //label 'process_low'
-
-  memory '16 GB'
+  label 'process_high'
   
   //Docker Image
   container = 'quay.io/biocontainers/mulled-v2-fe8faa35dbf6dc65a0f7f5d4ea12e31a79f73e40:8110a70be2bfe7f75a2ea7f2a89cda4cc7732095-0'
 
-  tag "$sampleId - v4-1" 
+  tag "$sampleId" 
   publishDir "$path_sample_align", mode : 'copy'
   
   input:
