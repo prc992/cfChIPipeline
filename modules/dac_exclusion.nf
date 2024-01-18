@@ -1,10 +1,10 @@
 process dac_exclusion {
-  queue = "$params.queue"
+  label 'process_low'
 
   //Docker Image
   container ='quay.io/biocontainers/bedtools:2.30.0--hc088bd4_0'
 
-  tag "$sampleId - 3" 
+  tag "$sampleId" 
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
