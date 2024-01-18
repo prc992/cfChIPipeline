@@ -1,6 +1,6 @@
 process json_uropa{
-  queue = "$params.queue"
-  tag "$sampleId - 2"
+  label 'process_low'
+  tag "$sampleId"
   publishDir "$path_sample_peaks", mode : 'copy'
 
   container = "ubuntu:noble-20231221"
@@ -28,8 +28,7 @@ process json_uropa{
 
 
 process uropa {
-  queue = "$params.queue"
-  memory '8 GB'
+  label 'process_medium'
   //Docker Image
   container = "quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0"
 
