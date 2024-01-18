@@ -1,5 +1,5 @@
 process sort_bam {
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
