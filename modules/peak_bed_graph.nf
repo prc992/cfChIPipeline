@@ -1,5 +1,5 @@
 process peak_bed_graph{
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container = 'quay.io/biocontainers/macs2:2.2.7.1--py38h4a8c8d9_3'
