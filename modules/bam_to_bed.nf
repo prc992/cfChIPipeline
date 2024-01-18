@@ -1,5 +1,5 @@
 process bam_to_bed {
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container ='quay.io/biocontainers/bedtools:2.30.0--hc088bd4_0'
