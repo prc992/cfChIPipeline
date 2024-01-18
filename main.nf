@@ -1,9 +1,7 @@
  #! /usr/bin/env nextflow
 nextflow.enable.dsl=2
 
-include {mk_dir} from './modules/mk_dir'
 include {lib_complex} from './modules/lib_complex'
-include {mk_dir_samples} from './modules/mk_dir_samples'
 include {fastqc} from './modules/fastqc'
 include {align} from './modules/align'
 include {sort_bam} from './modules/sort_bam'
