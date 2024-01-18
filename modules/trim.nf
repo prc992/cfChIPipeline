@@ -1,5 +1,5 @@
 process trim {
-  queue = "$params.queue"
+  label 'process_medium'
 
   //Docker Image
   container = "quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0"
