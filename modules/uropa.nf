@@ -49,6 +49,6 @@ process uropa {
   
   script:
   """
-  uropa -i $json_file -t $params.threads --summary
+  uropa -i $json_file -t $task.cpus --summary
   """
 }
