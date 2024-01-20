@@ -1,5 +1,5 @@
 process lib_complex {
-  label 'process_medium'
+  label 'process_high'
 
   //Docker Image
   container = "quay.io/biocontainers/picard:2.27.4--hdfd78af_0"
