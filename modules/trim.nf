@@ -1,10 +1,10 @@
 process trim {
-  label 'process_medium'
+  label 'process_high'
 
   //Docker Image
   container = "quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0"
 
-  tag "$sampleId"
+  tag "$sampleId - process_high"
   publishDir "$path_sample_trim", mode: 'copy'
 
   input:
