@@ -19,6 +19,6 @@ process fastqc {
   
   script:
   """
-  fastqc $read1 $read2
+  fastqc --threads $task.cpus $read1 $read2
   """
 }
