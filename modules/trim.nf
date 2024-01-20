@@ -18,6 +18,6 @@ process trim {
 
   script:
   """
-  trim_galore --paired $read1 $read2 --gzip
+  trim_galore --paired $read1 $read2 --gzip --cores $task.cpus
   """
 }
