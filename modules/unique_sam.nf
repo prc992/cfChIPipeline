@@ -20,6 +20,6 @@ process unique_sam {
 
   script:
   """
-  samtools view -b -q 1 $sampleBam > $strBam
+  samtools view --threads $task.cpus -b -q 1 $sampleBam > $strBam
   """
 }
