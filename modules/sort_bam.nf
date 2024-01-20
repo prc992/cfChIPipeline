@@ -1,5 +1,5 @@
 process sort_bam {
-  label 'process_medium'
+  label 'process_high'
 
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
