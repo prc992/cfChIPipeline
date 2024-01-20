@@ -24,7 +24,7 @@ process snp_fingerprint {
   script:
   """
   FASTA=`find -L ./ -name "*.fa"`
-  bcftools mpileup -Ou -R $snps_ref -f \$FASTA $sampleBam | bcftools call -c | bgzip > $strVCFgz
+  bcftools mpileup --threads $task.cpus -Ou -R $snps_ref -f \$FASTA $sampleBam | bcftools call --threads $task.cpus -c | bgzip --threads $task.cpus > $strVCFgz
   """
 
 }
