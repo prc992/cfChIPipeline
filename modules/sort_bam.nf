@@ -4,7 +4,7 @@ process sort_bam {
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
 
-  tag "$sampleId-1" 
+  tag "$sampleId - cpu" 
   publishDir "$path_sample_align", mode : 'copy'
   
   input:
@@ -20,6 +20,6 @@ process sort_bam {
 
   script:
   """
-  samtools sort $sampleBam -o $strBam
+  samtools sort -@ $task.cpus $sampleBam -o $strBam
   """
 }
