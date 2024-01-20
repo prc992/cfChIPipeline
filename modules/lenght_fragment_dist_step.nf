@@ -22,7 +22,7 @@ process lenght_fragment_dist_step1{
 
   script:
   """
-  samtools view $sampleBam | cut -f 9 | awk ' \$1 <= 1000 && \$1 > 0 ' > $strtxt
+  samtools view --threads $task.cpus $sampleBam | cut -f 9 | awk ' \$1 <= 1000 && \$1 > 0 ' > $strtxt
   """
 
 }
