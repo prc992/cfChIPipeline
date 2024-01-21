@@ -1,5 +1,5 @@
 process sort_bam {
-  label 'process_high'
+  label 'low_cpu_high_mem'
 
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
