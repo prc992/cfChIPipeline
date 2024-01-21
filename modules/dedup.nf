@@ -1,5 +1,5 @@
 process dedup {
-  label 'process_high'
+  label 'med_cpu_med_mem'
 
   //Docker Image
   container = 'quay.io/biocontainers/picard:2.27.4--hdfd78af_0'
