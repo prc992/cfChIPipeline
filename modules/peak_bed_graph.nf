@@ -1,5 +1,5 @@
 process peak_bed_graph{
-  label 'process_medium'
+  label 'low_cpu_low_mem'
 
   //Docker Image
   container = 'quay.io/biocontainers/macs2:2.2.7.1--py38h4a8c8d9_3'
