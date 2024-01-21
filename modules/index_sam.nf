@@ -1,5 +1,5 @@
 process index_sam {
-  label 'process_low'
+  label 'low_cpu_low_mem'
 
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
