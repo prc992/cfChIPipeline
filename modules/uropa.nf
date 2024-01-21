@@ -1,5 +1,5 @@
 process json_uropa{
-  label 'process_low'
+  label 'low_cpu_low_mem'
   tag "$sampleId"
   publishDir "$path_sample_peaks", mode : 'copy'
 
