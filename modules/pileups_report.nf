@@ -1,6 +1,6 @@
 process pileups_report{
   errorStrategy { sleep(Math.pow(2, task.attempt) * 200 as long); return 'retry' }
-  maxRetries 5
+  maxRetries 3
   label 'process_medium'
 
   tag "$sampleId" 
