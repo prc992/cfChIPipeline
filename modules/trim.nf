@@ -1,5 +1,5 @@
 process trim {
-  label 'process_medium'
+  label 'med_cpu_high_mem'
 
   //Docker Image
   container = "quay.io/biocontainers/trim-galore:0.6.7--hdfd78af_0"
