@@ -1,5 +1,5 @@
 process fastqc {
-  label 'process_low'
+  label 'med_cpu_med_mem'
     
   //Docker Image
   container = 'quay.io/biocontainers/fastqc:0.11.9--0'
