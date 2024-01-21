@@ -16,15 +16,12 @@ process peak_bed_graph{
 
   exec:
   path_sample_peaks = path + "/peaks/" + sampleId
-  nameNarrowPeaksFile = sampleId + '_peaks.narrowPeak'
-  nameNarrowPeaksFileBed = sampleId + '_peaks.narrowPeak.bed'
   
   script:
   """
   macs2 \\
   callpeak --SPMR -B -q 0.01 --keep-dup 1 -g hs -f BAMPE --extsize 146 --nomodel \\
   -t $sampleBam \\
-  -n $sampleId --bdg &&
-  mv $nameNarrowPeaksFile $nameNarrowPeaksFileBed
+  -n $sampleId --bdg
   """
 }
