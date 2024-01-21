@@ -13,7 +13,7 @@ process json_uropa{
 
   exec:
   path_sample_peaks = path + "/peaks/" + sampleId
-  bed_file = sampleId + '_peaks.narrowPeak.bed'
+  bed_file = sampleId + '_peaks.narrowPeak'
 
   script:
   """
