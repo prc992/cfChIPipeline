@@ -1,5 +1,5 @@
 process dac_exclusion {
-  label 'process_low'
+  label 'low_cpu_low_mem'
 
   //Docker Image
   container ='quay.io/biocontainers/bedtools:2.30.0--hc088bd4_0'
