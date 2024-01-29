@@ -2,7 +2,7 @@ process unique_frags {
   label 'process_low'
   container ='ubuntu:noble-20231221'
 
-  tag "#$sampleId" 
+  tag "Sample - $sampleId" 
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
