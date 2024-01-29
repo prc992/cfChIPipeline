@@ -4,7 +4,7 @@ process lenght_fragment_dist_step1{
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_frag", mode : 'copy'
 
   input:
