@@ -4,7 +4,7 @@ process bedGraphToBigWig {
   //Docker Image
   container = "quay.io/biocontainers/ucsc-bedgraphtobigwig:377--h446ed27_1"
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
