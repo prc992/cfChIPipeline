@@ -1,6 +1,6 @@
 process json_uropa{
   label 'low_cpu_low_mem'
-  tag "$sampleId"
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_peaks", mode : 'copy'
 
   container = "ubuntu:noble-20231221"
@@ -32,7 +32,7 @@ process uropa {
   //Docker Image
   container = "quay.io/biocontainers/uropa:4.0.3--pyhdfd78af_0"
 
-  tag "$sampleId - 2" 
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_peaks", mode : 'copy'
   
   input:
