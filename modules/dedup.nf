@@ -4,7 +4,7 @@ process dedup {
   //Docker Image
   container = 'quay.io/biocontainers/picard:2.27.4--hdfd78af_0'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_align", mode : 'copy'
 
   input:
