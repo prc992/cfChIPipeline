@@ -4,7 +4,7 @@ process pileups_report{
   //maxRetries 3
   label 'process_medium'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"   
 
   //Docker Image
   container ='prc992/pileups-report:v1.1'
