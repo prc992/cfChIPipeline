@@ -4,7 +4,7 @@ process bam_to_bed {
   //Docker Image
   container ='quay.io/biocontainers/bedtools:2.30.0--hc088bd4_0'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"  
   publishDir "$path_sample_peaks", mode : 'copy'
   
   input:
