@@ -4,7 +4,7 @@ process peak_bed_graph{
   //Docker Image
   container = 'quay.io/biocontainers/macs2:2.2.7.1--py38h4a8c8d9_3'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"   
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
