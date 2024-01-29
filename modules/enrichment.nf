@@ -4,7 +4,7 @@ process enrichment {
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
 
-  tag "On/Off Enrichment #$sampleId" 
+  tag "Sample - $sampleId"   
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
