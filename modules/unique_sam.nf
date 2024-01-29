@@ -4,7 +4,7 @@ process unique_sam {
   //Docker Image
   container ='quay.io/biocontainers/samtools:1.15.1--h1170115_0'
 
-  tag "$sampleId - 1" 
+  tag "Sample - $sampleId" 
   publishDir "$path_sample_align", mode : 'copy'
   
   input:
