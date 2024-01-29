@@ -4,7 +4,7 @@ process fetch_chrom_sizes{
   //Docker Image
   container = 'quay.io/biocontainers/ucsc-fetchchromsizes:377--ha8a8165_3'
 
-  tag "$sampleId" 
+  tag "Sample - $sampleId"   
   publishDir "$path_sample_peaks", mode : 'copy'
 
   input:
