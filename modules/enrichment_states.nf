@@ -1,4 +1,4 @@
-process enrichment {
+process enrichment_states {
   label 'process_medium'
 
   //Docker Image
@@ -14,13 +14,13 @@ process enrichment {
 
   exec:
   path_sample_peaks = path + "/peaks/" + sampleId
-  strCSV = sampleId + '_total_enrichment.csv'
+  strCSV = sampleId + '_enrichment.csv'
 
   output:
   path("*.csv")
 
   script:
   """
-  sh $chEnrichmentScript $sampleBam $params.states_ref $sampleId >> $strCSV
+  sh $chEnrichmentStatesScript $sampleBam $params.states_ref $sampleId >> $strCSV
   """
 }
