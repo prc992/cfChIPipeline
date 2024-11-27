@@ -21,6 +21,6 @@ process enrichment {
 
   script:
   """
-  sh $chEnrichmentScript $sampleBam $params.states_ref $sampleId >> $strCSV
+  sh $chEnrichmentScript $sampleBam $params.enrichment_states_ref $sampleId >> $strCSV
   """
 }
