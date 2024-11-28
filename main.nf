@@ -73,7 +73,7 @@ workflow {
     chChromSizes = fetch_chrom_sizes(chSampleInfo)
     //snp_fingerprint(chDedupFiles,chSNPS_ref,ch_fasta,chSampleInfo,chIndexFiles)
 
-    // Processo de SNP Fingerprint
+    // Processo de SNP Fingerprint -- Fingerprint
     chSnpFingerprintComplete = snp_fingerprint(chDedupFiles, chSNPS_ref, ch_fasta, chSampleInfo, chIndexFiles).collect()
 
     // Processo SNP Footprint Clustering (executa apenas após a conclusão de snp_fingerprint para todas as amostras)
