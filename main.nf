@@ -22,6 +22,7 @@ include {lenght_fragment_dist_step2} from './modules/lenght_fragment_dist_step'
 include {pileups_report} from './modules/pileups_report'
 include {uropa} from './modules/uropa'
 include {json_uropa} from './modules/uropa'
+include {snp_footprint_clustering} from './modules/snp_footprint_clustering'
 
 workflow {
 
@@ -34,6 +35,7 @@ workflow {
     chRfrag_plotFragDist = Channel.fromPath("$params.pathRfrag_plotFragDist")
     chRComparison = Channel.fromPath("$params.pathRComparison")
     chRPileups= Channel.fromPath("$params.pathRPileups")
+    chRSNPFootprint = Channel.fromPath("$params.pathSNPFootprint")
     //chJson_file = Channel.fromPath("$params.pathJson_file")
 
 
