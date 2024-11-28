@@ -12,6 +12,7 @@ process snp_footprint_clustering{
 
   input:
   tuple val(sampleId), val(path),path(_), path(_)
+  each path (chRSNPFootprint)
 
   exec:
   path_sample_snp_footprint = path + "/pile_ups" 
