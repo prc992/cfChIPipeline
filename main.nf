@@ -71,7 +71,13 @@ workflow {
     chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo)
     unique_frags(chBedFiles,chSampleInfo)
     chChromSizes = fetch_chrom_sizes(chSampleInfo)
-    snp_fingerprint(chDedupFiles,chSNPS_ref,ch_fasta,chSampleInfo,chIndexFiles)
+    //snp_fingerprint(chDedupFiles,chSNPS_ref,ch_fasta,chSampleInfo,chIndexFiles)
+
+    // Processo de SNP Fingerprint
+    chSnpFingerprintComplete = snp_fingerprint(chDedupFiles, chSNPS_ref, ch_fasta, chSampleInfo, chIndexFiles).collect()
+
+    // Processo SNP Footprint Clustering (executa apenas após a conclusão de snp_fingerprint para todas as amostras)
+    snp_footprint_clustering(chSampleInfo)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
