@@ -22,4 +22,5 @@ process snp_footprint_clustering{
   script:
   """
   Rscript $chRSNPFootprint
+  """
 }
