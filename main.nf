@@ -78,7 +78,7 @@ workflow {
     chSnpFingerprintComplete = snp_fingerprint(chDedupFiles, chSNPS_ref, ch_fasta, chSampleInfo, chIndexFiles).collect()
 
     // Processo SNP Footprint Clustering (executa apenas após a conclusão de snp_fingerprint para todas as amostras)
-    snp_footprint_clustering(chSampleInfo,chRSNPFootprint)
+    snp_footprint_clustering(chSampleInfo,chRSNPFootprint,chSnpFingerprintComplete)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
