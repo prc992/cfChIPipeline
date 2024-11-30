@@ -22,7 +22,7 @@ process json_uropa{
   echo '"show_attributes":["gene_id", "gene_name","gene_type"],   ' >> cfchip.json
   echo '"priority" : "True",' >> cfchip.json
   echo '"gtf": "gencode.v19.annotation.gtf",' >> cfchip.json
-  echo '"bed": "\$BED_FILE"}' >> cfchip.json
+  echo '"bed": "$BED_FILE"}' >> cfchip.json
   """
 }
 
