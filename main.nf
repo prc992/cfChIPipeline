@@ -65,8 +65,9 @@ workflow {
     chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo)
 
-    chJson_file = json_uropa(chSampleInfo)
-    uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
+    //corrigir depois
+    //chJson_file = json_uropa(chSampleInfo)
+    //uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
 
     chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo)
     unique_frags(chBedFiles,chSampleInfo)
