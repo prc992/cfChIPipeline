@@ -12,6 +12,7 @@ process snp_footprint_clustering{
 
   input:
   tuple val(sampleId), val(path),path(_), path(_)
+  path(chRSNPFootprint)
   path (vcfFiles)
   
 

@@ -65,8 +65,9 @@ workflow {
     chIndexFiles = index_sam(chDedupFiles,chSampleInfo)
     chPeakFiles = peak_bed_graph(chDedupFiles,chSampleInfo)
 
-    chJson_file = json_uropa(chSampleInfo)
-    uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
+    //corrigir depois
+    //chJson_file = json_uropa(chSampleInfo)
+    //uropa(chPeakFiles,chJson_file,chGTF_ref,chSampleInfo)
 
     chBedFiles = bam_to_bed(chDedupFiles,chSampleInfo)
     unique_frags(chBedFiles,chSampleInfo)
@@ -77,7 +78,7 @@ workflow {
     chSnpFingerprintComplete = snp_fingerprint(chDedupFiles, chSNPS_ref, ch_fasta, chSampleInfo, chIndexFiles).collect()
 
     // Processo SNP Footprint Clustering (executa apenas após a conclusão de snp_fingerprint para todas as amostras)
-    snp_footprint_clustering(chSampleInfo,chRSNPFootprint)
+    snp_footprint_clustering(chSampleInfo,chRSNPFootprint,chSnpFingerprintComplete)
 
     enrichment(chEnrichmentScript,chDedupFiles,chSampleInfo)
     chFragDis = lenght_fragment_dist_step1(chDedupFiles,chSampleInfo)
