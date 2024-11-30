@@ -11,8 +11,9 @@ process snp_footprint_clustering{
   publishDir "$path_sample_snp_footprint", mode : 'copy'
 
   input:
-  tuple val(sampleId), path(vcfFiles)
-  path (chRSNPFootprint)
+  tuple val(sampleId), val(path),path(_), path(_)
+  path (vcfFiles)
+  
 
   exec:
   path_sample_snp_footprint = path + "/snp_fingerprint" 
