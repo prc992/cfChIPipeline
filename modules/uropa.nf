@@ -16,15 +16,27 @@ process json_uropa{
 
   script:
   """
-  BED_FILE=`find -L ./ -name "*.narrowPeak"`
-  echo '{"queries": [' >> cfchip.json
-  echo '{"feature":"gene","distance":10000,"filter.attribute" : "gene_type","attribute.value" : "protein_coding","feature.anchor":"start"}],' >> cfchip.json
-  echo '"show_attributes":["gene_id", "gene_name","gene_type"],   ' >> cfchip.json
-  echo '"priority" : "True",' >> cfchip.json
-  echo '"gtf": "gencode.v19.annotation.gtf",' >> cfchip.json
-  echo '"bed": "$BED_FILE"}' >> cfchip.json
-  """
+  # Find the .narrowPeak file in the current directory
+  BED_FILE=\$(find -L ./ -name "*.narrowPeak")
+
+  # Write the JSON configuration file for UROPA
+  echo '{
+      "queries": [{
+          "feature": "gene",
+          "distance": 10000,
+          "filter.attribute": "gene_type",
+          "attribute.value": "protein_coding",
+          "feature.anchor": "start"
+      }],
+      "show_attributes": ["gene_id", "gene_name", "gene_type"],
+      "priority": true,
+      "gtf": "gencode.v19.annotation.gtf",
+      "bed": "\$BED_FILE"
+    }' > cfchip.json
+    """
 }
+
+
 
 
 process uropa {
