@@ -45,7 +45,7 @@ process uropa {
   path_sample_peaks = path + "/peaks/" + sampleId
   
   output:
-  path ('*finalhits.bed')
+  path '*'
   
   script:
   """
