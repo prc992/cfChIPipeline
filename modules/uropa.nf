@@ -13,16 +13,16 @@ process json_uropa{
 
   exec:
   path_sample_peaks = path + "/peaks/" + sampleId
-  bed_file = sampleId + '_peaks.narrowPeak'
 
   script:
   """
+  BED_FILE=`find -L ./ -name "*.narrowPeak"`
   echo '{"queries": [' >> cfchip.json
   echo '{"feature":"gene","distance":10000,"filter.attribute" : "gene_type","attribute.value" : "protein_coding","feature.anchor":"start"}],' >> cfchip.json
   echo '"show_attributes":["gene_id", "gene_name","gene_type"],   ' >> cfchip.json
   echo '"priority" : "True",' >> cfchip.json
   echo '"gtf": "gencode.v19.annotation.gtf",' >> cfchip.json
-  echo '"bed": "$bed_file"}' >> cfchip.json
+  echo '"bed": "\$BED_FILE"}' >> cfchip.json
   """
 }
 
