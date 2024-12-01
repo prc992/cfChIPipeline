@@ -24,6 +24,11 @@ process snp_footprint_clustering{
 
   script:
   """
+  echo "Sample ID: $sampleId"
+  echo "Path: $path"
+  echo "chRSNPFootprint: $chRSNPFootprint"
+  echo "vcfFiles: $vcfFiles"
+
   Rscript $chRSNPFootprint
   """
 }
